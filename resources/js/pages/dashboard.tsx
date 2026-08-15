@@ -20,7 +20,7 @@ type Student = {
     studentId: string;
     course: string;
     year: string;
-    gpa: string;
+    grade: string;
     email: string;
     createdAt?: { seconds: number } | Date | null;
 };
@@ -45,7 +45,7 @@ const emptyForm = {
     studentId: '',
     course: '',
     year: '',
-    gpa: '',
+    grade: '',
     email: '',
 };
 
@@ -110,11 +110,11 @@ export default function Dashboard() {
             studentId: form.studentId.trim(),
             course: form.course.trim(),
             year: form.year.trim(),
-            gpa: form.gpa.trim(),
+            grade: form.grade.trim(),
             email: form.email.trim(),
         };
 
-        if (!trimmed.name || !trimmed.studentId || !trimmed.course || !trimmed.year || !trimmed.gpa) {
+        if (!trimmed.name || !trimmed.studentId || !trimmed.course || !trimmed.year || !trimmed.grade) {
             setError('Please complete all required fields before saving.');
             return;
         }
@@ -167,7 +167,7 @@ export default function Dashboard() {
             studentId: student.studentId ?? '',
             course: student.course ?? '',
             year: student.year ?? '',
-            gpa: student.gpa ?? '',
+            grade: student.grade ?? '',
             email: student.email ?? '',
         });
     };
@@ -267,8 +267,8 @@ export default function Dashboard() {
                                 <label className="grid gap-2 text-sm font-medium">
                                     GPA
                                     <input
-                                        value={form.gpa}
-                                        onChange={(event) => handleChange('gpa', event.target.value)}
+                                        value={form.grade}
+                                        onChange={(event) => handleChange('grade', event.target.value)}
                                         className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none ring-0 focus:border-ring"
                                         placeholder="1.78"
                                     />
@@ -342,7 +342,7 @@ export default function Dashboard() {
                                         <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
                                             <span>Course: {student.course}</span>
                                             <span>Year: {student.year}</span>
-                                            <span>Grade: {student.gpa}</span>
+                                            <span>Grade: {student.grade}</span>
                                             <span>Email: {student.email || '—'}</span>
                                         </div>
                                     </div>
