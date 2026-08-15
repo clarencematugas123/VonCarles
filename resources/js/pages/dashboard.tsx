@@ -201,8 +201,8 @@ export default function Dashboard() {
             <div className="flex h-full flex-1 flex-col gap-6 overflow-x-auto rounded-xl p-4 md:p-6">
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                     <div>
-                        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Mini student</p>
-                        <h1 className="text-3xl font-bold">Student Record</h1>
+                        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">VonCarles</p>
+                        <h1 className="text-3xl font-bold">Mini Student Record</h1>
                     </div>
                     <span className="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-sm font-medium">
                         {connectionStatus}
@@ -342,7 +342,7 @@ export default function Dashboard() {
                                         <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
                                             <span>Course: {student.course}</span>
                                             <span>Year: {student.year}</span>
-                                            <span>GPA: {student.gpa}</span>
+                                            <span>Grade: {student.gpa}</span>
                                             <span>Email: {student.email || '—'}</span>
                                         </div>
                                     </div>
@@ -350,10 +350,6 @@ export default function Dashboard() {
                             </div>
                         )}
                     </div>
-                </div>
-
-                <div className="rounded-2xl border border-dashed border-border bg-muted/20 p-4 text-sm text-muted-foreground">
-                    Firestore is a NoSQL document database. In this app, each student is stored as one document inside the students collection, which makes it easy to add, read, update, and delete records in real time.
                 </div>
             </div>
         </>
